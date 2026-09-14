@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "Midnight City",
+    "artist": "M83",
+    "album": "Hurry Up, We're Dreaming",
+    "duration": 241,
+    "color": "#8b5cf6",
+    "audio": "/audio/track1.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Electric Feel",
+    "artist": "MGMT",
+    "album": "Oracular Spectacular",
+    "duration": 230,
+    "color": "#0ea5e9",
+    "audio": "/audio/track2.mp3"
+  },
+  {
+    "id": 3,
+    "title": "Take Me Out",
+    "artist": "Franz Ferdinand",
+    "album": "Franz Ferdinand",
+    "duration": 210,
+    "color": "#f43f5e",
+    "audio": "/audio/track3.mp3"
+  },
+  {
+    "id": 4,
+    "title": "Time to Pretend",
+    "artist": "MGMT",
+    "album": "Oracular Spectacular",
+    "duration": 230,
+    "color": "#14b8a6",
+    "audio": "/audio/track4.mp3"
+  },
+  {
+    "id": 5,
+    "title": "Kids",
+    "artist": "MGMT",
+    "album": "Oracular Spectacular",
+    "duration": 240,
+    "color": "#f59e0b",
+    "audio": "/audio/track5.mp3"
+  },
+    {
+    "id": 6,
+    "title": "Somebody That I Used to Know",
+    "artist": "Gotye",
+    "album": "Making Mirrors",
+    "duration": 245,
+    "color": "#6366f1",
+    "audio": "/audio/track1.mp3"
+  },
+  {
+    "id": 7,
+    "title": "Pumped Up Kicks",
+    "artist": "Foster the People",
+    "album": "Torches",
+    "duration": 220,
+    "color": "#ec4899",
+    "audio": "/audio/track2.mp3"
+  },
+  {
+    "id": 8,
+    "title": "Dog Days Are Over",
+    "artist": "Florence + The Machine",
+    "album": "Lungs",
+    "duration": 230,
+    "color": "#22c55e",
+    "audio": "/audio/track3.mp3"
+  },
+  {
+    "id": 9,
+    "title": "Young Folks",
+    "artist": "Peter Bjorn and John",
+    "album": "Writer's Block",
+    "duration": 210,
+    "color": "#8b5cf6",
+    "audio": "/audio/track4.mp3"
+  },
+  {
+    "id": 10,
+    "title": "1901",
+    "artist": "Phoenix",
+    "album": "Wolfgang Amadeus Phoenix",
+    "duration": 220,
+    "color": "#0ea5e9",
+    "audio": "/audio/track5.mp3"
+  },
+  {
+    "id": 11,
+    "title": "Reptilia",
+    "artist": "The Strokes",
+    "album": "Room on Fire",
+    "duration": 210,
+    "color": "#f43f5e",
+    "audio": "/audio/track1.mp3"
+  },
+  {
+    "id": 12,
+    "title": "Lisztomania",
+    "artist": "Phoenix",
+    "album": "Wolfgang Amadeus Phoenix",
+    "duration": 220,
+    "color": "#14b8a6",
+    "audio": "/audio/track2.mp3"
+  },
+  {
+    "id": 13,
+    "title": "Electric Love",
+    "artist": "BØRNS",
+    "album": "Dopamine",
+    "duration": 230,
+    "color": "#f59e0b",
+    "audio": "/audio/track3.mp3"
+  },
+  {
+    "id": 14,
+    "title": "Sweet Disposition",
+    "artist": "The Temper Trap",
+    "album": "Conditions",
+    "duration": 240,
+    "color": "#6366f1",
+    "audio": "/audio/track4.mp3"
+  },
+  {
+    "id": 15,
+    "title": "Helena Beat",
+    "artist": "Foster the People",
+    "album": "Torches",
+    "duration": 220,
+    "color": "#ec4899",
+    "audio": "/audio/track5.mp3"
+  }
+]
