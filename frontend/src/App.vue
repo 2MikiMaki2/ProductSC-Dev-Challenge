@@ -88,6 +88,6 @@ watch(() => player.isPlaying, (playing) => {
 }
 
 .library-column { flex: 1; }
-.browse-column { flex: 2; }
+.browse-column { flex: 3; }
 .info-column { flex: 1; }
 </style>
