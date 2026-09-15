@@ -1,9 +1,11 @@
 <script setup>
-/*import BrowseView from './components/BrowseView.vue';
+import BrowseView from './components/BrowseView.vue';
+/*
 import LibraryView from './components/LibraryView.vue';
 import InfoView from './components/InfoView.vue';
 */
 import SearchBarView from './components/SearchBarView.vue';
+import PlayBarView from './components/PlayBarView.vue';
 
 </script>
 
@@ -18,14 +20,16 @@ import SearchBarView from './components/SearchBarView.vue';
         <!-- <LibraryView /> -->     
       </div>
       <div class="column browse-column">
-        <!-- <BrowseView /> -->
+        <BrowseView />
       </div>
       <div class="column info-column">
         <!-- <InfoView /> -->
       </div>
     </div>
 
-    <div class="play-bar"></div>
+    <div class="media-bar">
+      <PlayBarView />
+    </div>
 
   </div>
 </template>
@@ -59,7 +63,7 @@ import SearchBarView from './components/SearchBarView.vue';
   min-height: 0;
   padding: 10px;
   color: white;
-  background-color: #181818;
+  background-color: #0f0f0f;
   border-radius: 10px;
 }
 
@@ -75,12 +79,9 @@ import SearchBarView from './components/SearchBarView.vue';
   flex: 1;
 }
 
-.play-bar {
+.media-bar {
   height: 70px;
   background-color: black;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 </style>

@@ -16,7 +16,12 @@ export const usePlayerStore = defineStore('player', () => {
   )
 
   const filteredTracks = computed(() => {
-    
+    if (!searchQuery.value) return tracks.value
+    const query = searchQuery.value.toLowerCase()
+    return tracks.value.filter(
+      t => t.title.toLowerCase().includes(query) ||
+          t.artist.toLowerCase().includes(query)
+    )
   })
 
   // actions
@@ -25,5 +30,25 @@ export const usePlayerStore = defineStore('player', () => {
     isPlaying.value = true
   }
 
-  return { tracks, currentTrackId, isPlaying, searchQuery, currentTrack, filteredTracks, playTrack }
+  function togglePlay() {
+    if (!currentTrackId.value) {
+      playTrack(tracks.value[0].id)
+      return
+    }
+    isPlaying.value = !isPlaying.value
+  }
+
+  function next() {
+  const i = tracks.value.findIndex(t => t.id === currentTrackId.value)
+  const nextTrack = tracks.value[(i + 1) % tracks.value.length]
+  playTrack(nextTrack.id)
+}
+
+function previous() {
+  const i = tracks.value.findIndex(t => t.id === currentTrackId.value)
+  const prevIndex = (i - 1 + tracks.value.length) % tracks.value.length
+  playTrack(tracks.value[prevIndex].id)
+}
+
+  return { tracks, currentTrackId, isPlaying, searchQuery, currentTrack, filteredTracks, playTrack, togglePlay, next, previous }
 })
