@@ -16,11 +16,7 @@ export const usePlayerStore = defineStore('player', () => {
   )
 
   const filteredTracks = computed(() => {
-    // if (!searchQuery.value) {
-    //   return tracks.value
-    // }
-    // const query = searchQuery.value.toLowerCase()
-    // return tracks.value.filter(t => t.title.toLowerCase().includes(query))
+    
   })
 
   // actions
