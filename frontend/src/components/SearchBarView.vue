@@ -1,5 +1,5 @@
 <script setup>
-import { Search, House, CircleUserRound, ChevronLeft, ChevronRight, DiscAlbum } from 'lucide-vue-next'
+import { Search, House, CircleUserRound, ChevronLeft, ChevronRight, DiscAlbum, Bell, UsersRound } from 'lucide-vue-next'
 import { usePlayerStore } from '@/stores/player'
 const player = usePlayerStore()
 </script>
@@ -33,6 +33,12 @@ const player = usePlayerStore()
     </div>
 
     <div class="bar-right">
+      <button class="icon-btn grow" aria-label="Notifications" title="Notifications">
+        <Bell :size="20" />
+      </button>
+      <button class="icon-btn grow" aria-label="Friends" title="Friends">
+        <UsersRound :size="20" />
+      </button>
       <button class="icon-btn icon-btn--circle grow" aria-label="Profile" title="Profile">
         <CircleUserRound :size="24" />
       </button>
@@ -65,6 +71,7 @@ const player = usePlayerStore()
 .bar-right {
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
 }
 
 .grow:hover { transform: scale(1.05); }

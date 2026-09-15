@@ -6,7 +6,7 @@ import tracksData from '@/data/tracks.json'
 export const usePlayerStore = defineStore('player', () => {
   // state
   const tracks = ref(tracksData)
-  const currentTrackId = ref(null)
+  const currentTrackId = ref(tracksData[0].id)
   const isPlaying = ref(false)
   const searchQuery = ref('')
   const currentTime = ref(0)
@@ -23,6 +23,12 @@ export const usePlayerStore = defineStore('player', () => {
       t => t.title.toLowerCase().includes(query) ||
           t.artist.toLowerCase().includes(query)
     )
+  })
+
+  const queue = computed(() => {
+    const i = tracks.value.findIndex(t => t.id === currentTrackId.value)
+    if (i === -1) return []
+    return tracks.value.slice(i + 1, i + 5)
   })
 
   // actions
@@ -51,5 +57,5 @@ function previous() {
   playTrack(tracks.value[prevIndex].id)
 }
 
-  return { tracks, currentTrackId, isPlaying, searchQuery, currentTime, currentTrack, filteredTracks, playTrack, togglePlay, next, previous }
+  return { tracks, currentTrackId, isPlaying, searchQuery, currentTime, currentTrack, filteredTracks, queue, playTrack, togglePlay, next, previous }
 })
