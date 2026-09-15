@@ -21,10 +21,10 @@ function scrollRow(direction) {
     <div class="row-header">
       <h2>{{ title }}</h2>
       <div class="row-arrows">
-        <button class="arrow" @click="scrollRow(-1)" aria-label="Scroll left">
+        <button class="icon-btn arrow" @click="scrollRow(-1)" aria-label="Scroll left">
           <ChevronLeft :size="20" />
         </button>
-        <button class="arrow" @click="scrollRow(1)" aria-label="Scroll right">
+        <button class="icon-btn arrow" @click="scrollRow(1)" aria-label="Scroll right">
           <ChevronRight :size="20" />
         </button>
       </div>
@@ -58,26 +58,20 @@ function scrollRow(direction) {
 .row-header h2 {
   margin: 0;
   font-size: 22px;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .row-arrows { display: flex; gap: 4px; }
 
 .arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 32px;
   height: 32px;
-  border: none;
   border-radius: 50%;
-  background: #1f1f1f;
-  color: #b3b3b3;
-  cursor: pointer;
-  transition: color 0.15s, background-color 0.15s;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
 }
 
-.arrow:hover { color: #fff; background: #2a2a2a; }
+.arrow:hover { background: var(--bg-card-hover); }
 
 .row-scroller {
   display: flex;
@@ -92,8 +86,8 @@ function scrollRow(direction) {
   flex: 0 0 160px;
   padding: 12px;
   border: none;
-  border-radius: 8px;
-  background: #0f0f0f;
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
   color: inherit;
   font: inherit;
   text-align: left;
@@ -101,7 +95,7 @@ function scrollRow(direction) {
   transition: background-color 0.2s;
 }
 
-.card:hover { background: #282828; }
+.card:hover { background: var(--bg-card-hover); }
 
 .card-art {
   width: 100%;
@@ -111,14 +105,14 @@ function scrollRow(direction) {
 }
 
 .card-title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .card-sub {
-  color: #b3b3b3;
+  color: var(--text-muted);
   font-size: 13px;
 }
 

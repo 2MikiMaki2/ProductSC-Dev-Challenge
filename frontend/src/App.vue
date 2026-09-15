@@ -6,18 +6,17 @@ import InfoView from './components/InfoView.vue';
 */
 import SearchBarView from './components/SearchBarView.vue';
 import PlayBarView from './components/PlayBarView.vue';
-
 </script>
 
 <template>
   <div class="layout-container">
-    <div class="search-bar">
+    <div class="top-bar-slot">
       <SearchBarView />
     </div>
 
     <div class="columns-container">
       <div class="column library-column">
-        <!-- <LibraryView /> -->     
+        <!-- <LibraryView /> -->
       </div>
       <div class="column browse-column">
         <BrowseView />
@@ -27,61 +26,43 @@ import PlayBarView from './components/PlayBarView.vue';
       </div>
     </div>
 
-    <div class="media-bar">
+    <div class="play-bar-slot">
       <PlayBarView />
     </div>
-
   </div>
 </template>
 
 <style scoped>
-
 .layout-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: black;
+  background-color: var(--bg-base);
+}
+
+.top-bar-slot,
+.play-bar-slot {
+  height: 70px;
+  background-color: var(--bg-base);
 }
 
 .columns-container {
   min-height: 0;
   display: flex;
   flex: 1;
-  background-color: black;
   gap: 6px;
-  padding: 0px 8px 6px;
-}
-
-.search-bar {
-  height: 70px;
-  background-color: black;
-  color: white;
+  padding: 0 8px 6px;
 }
 
 .column {
   overflow-y: auto;
   min-height: 0;
   padding: 10px;
-  color: white;
-  background-color: #0f0f0f;
+  background-color: var(--bg-elevated);
   border-radius: 10px;
 }
 
-.library-column {
-  flex: 1;
-}
-
-.browse-column {
-  flex: 2;
-}
-
-.info-column {
-  flex: 1;
-}
-
-.media-bar {
-  height: 70px;
-  background-color: black;
-  color: white;
-}
+.library-column { flex: 1; }
+.browse-column { flex: 2; }
+.info-column { flex: 1; }
 </style>

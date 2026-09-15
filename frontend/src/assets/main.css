@@ -1,8 +1,8 @@
 :root {
   /* surfaces */
   --bg-base: #000000;
-  --bg-elevated: #121212;
-  --bg-card: #181818;
+  --bg-elevated: #0c0c0c;
+  --bg-card: #0c0c0c;
   --bg-card-hover: #282828;
   --bg-input: #242424;
 

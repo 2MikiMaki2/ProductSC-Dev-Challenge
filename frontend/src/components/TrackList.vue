@@ -38,7 +38,7 @@ function formatDuration(seconds) {
 <style scoped>
 .track-list { display: flex; flex-direction: column; }
 
-.empty { color: #b3b3b3; padding: 24px 0; }
+.empty { color: var(--text-muted); padding: 24px 0; }
 
 .track-row {
   display: grid;
@@ -54,10 +54,10 @@ function formatDuration(seconds) {
   cursor: pointer;
 }
 
-.track-row:hover { background: #2a2a2a; }
-.track-row.active .track-title { color: #1db954; }
+.track-row:hover { background: var(--bg-card-hover); }
+.track-row.active .track-title { color: var(--accent); }
 
-.track-index { color: #b3b3b3; font-size: 14px; }
+.track-index { color: var(--text-muted); font-size: 14px; }
 
 .track-art {
   width: 40px;
@@ -65,10 +65,12 @@ function formatDuration(seconds) {
   border-radius: 4px;
 }
 
-.track-title { color: #fff; font-size: 15px; }
-.track-artist { color: #b3b3b3; font-size: 13px; }
-.track-album { color: #b3b3b3; font-size: 13px; }
-.track-duration { color: #b3b3b3; font-size: 13px; text-align: right; }
+.track-title { color: var(--text-primary); font-size: 15px; }
+.track-artist,
+.track-album,
+.track-duration { color: var(--text-muted); font-size: 13px; }
+
+.track-duration { text-align: right; }
 
 .track-album, .track-title, .track-artist {
   white-space: nowrap;
