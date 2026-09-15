@@ -1,4 +1,7 @@
 <script setup>
+import { ref, watch } from 'vue'
+import { usePlayerStore } from '@/stores/player'
+
 import BrowseView from './components/BrowseView.vue';
 /*
 import LibraryView from './components/LibraryView.vue';
@@ -6,10 +9,32 @@ import InfoView from './components/InfoView.vue';
 */
 import SearchBarView from './components/SearchBarView.vue';
 import PlayBarView from './components/PlayBarView.vue';
+
+const player = usePlayerStore()
+const audio = ref(null)
+
+watch(() => player.currentTrackId, () => {
+  if (!player.currentTrack) return
+  audio.value.src = player.currentTrack.audio
+  audio.value.play().catch(() => {})
+})
+
+watch(() => player.isPlaying, (playing) => {
+  if (playing) {
+    audio.value.play().catch(() => {})
+  } else {
+    audio.value.pause()
+  }
+})
 </script>
 
 <template>
   <div class="layout-container">
+    <audio
+      ref="audio"
+      @ended="player.next()"
+      @timeupdate="player.currentTime = audio.currentTime"
+      />
     <div class="top-bar-slot">
       <SearchBarView />
     </div>

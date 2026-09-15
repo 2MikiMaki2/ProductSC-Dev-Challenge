@@ -9,6 +9,7 @@ export const usePlayerStore = defineStore('player', () => {
   const currentTrackId = ref(null)
   const isPlaying = ref(false)
   const searchQuery = ref('')
+  const currentTime = ref(0)
 
   // getters
   const currentTrack = computed(() =>
@@ -50,5 +51,5 @@ function previous() {
   playTrack(tracks.value[prevIndex].id)
 }
 
-  return { tracks, currentTrackId, isPlaying, searchQuery, currentTrack, filteredTracks, playTrack, togglePlay, next, previous }
+  return { tracks, currentTrackId, isPlaying, searchQuery, currentTime, currentTrack, filteredTracks, playTrack, togglePlay, next, previous }
 })
