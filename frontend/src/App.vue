@@ -3,8 +3,8 @@ import { ref, watch } from 'vue'
 import { usePlayerStore } from '@/stores/player'
 
 import BrowseView from './components/BrowseView.vue';
-/*
 import LibraryView from './components/LibraryView.vue';
+/*
 import InfoView from './components/InfoView.vue';
 */
 import SearchBarView from './components/SearchBarView.vue';
@@ -41,7 +41,7 @@ watch(() => player.isPlaying, (playing) => {
 
     <div class="columns-container">
       <div class="column library-column">
-        <!-- <LibraryView /> -->
+        <LibraryView />
       </div>
       <div class="column browse-column">
         <BrowseView />
