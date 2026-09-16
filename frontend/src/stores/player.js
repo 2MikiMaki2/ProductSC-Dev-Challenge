@@ -10,6 +10,7 @@ export const usePlayerStore = defineStore('player', () => {
   const isPlaying = ref(false)
   const searchQuery = ref('')
   const currentTime = ref(0)
+  const selectedAlbum = ref(null)
 
   // getters
   const currentTrack = computed(() =>
@@ -30,6 +31,27 @@ export const usePlayerStore = defineStore('player', () => {
     if (i === -1) return []
     return tracks.value.slice(i + 1, i + 5)
   })
+
+  const albums = computed(() => {
+    const map = new Map()
+    for (const track of tracks.value) {
+      if (!map.has(track.album)) {
+        map.set(track.album, { name: track.album, artist: track.artist, color: track.color, tracks: [] })
+      }
+      map.get(track.album).tracks.push(track)
+    }
+    return [...map.values()]
+  })
+
+  const albumTracks = computed(() =>
+    tracks.value.filter(t => t.album === selectedAlbum.value)
+  )
+
+  function openAlbum(name) { selectedAlbum.value = name }
+
+  function closeAlbum() { selectedAlbum.value = null }
+
+  function playAlbum() { if (albumTracks.value.length) playTrack(albumTracks.value[0].id) }
 
   // actions
   function playTrack(id) {
@@ -57,5 +79,5 @@ function previous() {
   playTrack(tracks.value[prevIndex].id)
 }
 
-  return { tracks, currentTrackId, isPlaying, searchQuery, currentTime, currentTrack, filteredTracks, queue, playTrack, togglePlay, next, previous }
+  return { tracks, currentTrackId, isPlaying, searchQuery, currentTime, currentTrack, selectedAlbum, filteredTracks, queue, playTrack, togglePlay, next, previous, albums, albumTracks, openAlbum, closeAlbum, playAlbum }
 })

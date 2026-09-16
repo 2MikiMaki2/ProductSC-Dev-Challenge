@@ -1,5 +1,6 @@
 <script setup>
 import { usePlayerStore } from '@/stores/player'
+import { artGradient } from '@/utils/format'
 import {
   Play, Pause, SkipBack, SkipForward, Repeat, Shuffle,
   MicVocal, ListMusic, MonitorSpeaker, Volume2, PictureInPicture2, Maximize
@@ -12,7 +13,7 @@ const player = usePlayerStore()
   <div class="bar-container">
     <div class="track-info">
       <template v-if="player.currentTrack">
-        <div class="bar-art" :style="{ backgroundColor: player.currentTrack.color }" />
+        <div class="bar-art" :style="artGradient(player.currentTrack.color)" />
         <div class="track-details">
           <div class="bar-title">{{ player.currentTrack.title }}</div>
           <div class="bar-sub">{{ player.currentTrack.artist }}</div>

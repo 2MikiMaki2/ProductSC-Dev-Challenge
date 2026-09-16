@@ -1,6 +1,7 @@
 <script setup>
 import { Search, Logs, Plus, Maximize2 } from 'lucide-vue-next'
 import { usePlayerStore } from '@/stores/player'
+import { artGradient } from '@/utils/format'
 
 const player = usePlayerStore()
 const filters = ['Playlists', 'Podcasts', 'Albums', 'Artists']
@@ -36,16 +37,16 @@ const filters = ['Playlists', 'Podcasts', 'Albums', 'Artists']
 
     <div class="library-list">
       <button
-        v-for="track in player.tracks"
-        :key="track.id"
+        v-for="album in player.albums"
+        :key="album.name"
         class="library-row"
-        :class="{ active: track.id === player.currentTrackId }"
-        @click="player.playTrack(track.id)"
+        :class="{ active: album.name === player.selectedAlbum }"
+        @click="player.openAlbum(album.name)"
       >
-        <div class="row-art" :style="{ backgroundColor: track.color }" />
+        <div class="row-art" :style="artGradient(album.color)" />
         <div class="row-meta">
-          <div class="row-title">{{ track.album }}</div>
-          <div class="row-sub">Album • {{ track.artist }}</div>
+          <div class="row-title">{{ album.name }}</div>
+          <div class="row-sub">Album • {{ album.artist }}</div>
         </div>
       </button>
     </div>

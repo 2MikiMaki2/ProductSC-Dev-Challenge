@@ -1,13 +1,8 @@
 <script setup>
 import { usePlayerStore } from '@/stores/player'
+import { formatDuration, artGradient } from '@/utils/format'
 
 const player = usePlayerStore()
-
-function formatDuration(seconds) {
-  const mins = Math.floor(seconds / 60)
-  const secs = String(seconds % 60).padStart(2, '0')
-  return `${mins}:${secs}`
-}
 </script>
 
 <template>
@@ -24,7 +19,7 @@ function formatDuration(seconds) {
       @click="player.playTrack(track.id)"
     >
       <span class="track-index">{{ index + 1 }}</span>
-      <div class="track-art" :style="{ backgroundColor: track.color }" />
+      <div class="track-art" :style="artGradient(track.color)" />
       <div class="track-meta">
         <div class="track-title">{{ track.title }}</div>
         <div class="track-artist">{{ track.artist }}</div>

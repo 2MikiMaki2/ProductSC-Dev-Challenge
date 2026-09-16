@@ -1,6 +1,7 @@
 <script setup>
 import CarouselRow from './CarouselRow.vue'
 import TrackList from './TrackList.vue'
+import AlbumView from './AlbumView.vue'
 import { usePlayerStore } from '@/stores/player'
 
 const player = usePlayerStore()
@@ -9,6 +10,8 @@ const player = usePlayerStore()
 <template>
   <div class="browse">
     <TrackList v-if="player.searchQuery" />
+
+    <AlbumView v-else-if="player.selectedAlbum" />
 
     <template v-else>
       <CarouselRow title="Made for you" :items="player.tracks.slice(0, 8)" />
