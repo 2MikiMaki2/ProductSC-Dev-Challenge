@@ -2,7 +2,7 @@
 
 A recreation of Spotify's logged-in web player, built with Vue 3 and Vite.
 
-**Live demo:** <link>
+**Live demo:** [Link](https://product-sc-dev-challenge.vercel.app/)
 
 ## What's implemented
 
