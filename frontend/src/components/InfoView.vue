@@ -1,7 +1,7 @@
 <script setup>
 import { X, Heart, MoreHorizontal } from 'lucide-vue-next'
 import { usePlayerStore } from '@/stores/player'
-import { artGradient } from '@/utils/format'
+import { artCover } from '@/utils/format'
 
 const player = usePlayerStore()
 </script>
@@ -20,7 +20,7 @@ const player = usePlayerStore()
       </div>
     </header>
 
-    <div class="hero-art" :style="artGradient(player.currentTrack.color)" />
+    <div class="hero-art" :style="artCover(player.currentTrack.cover)" />
 
     <div class="now-playing">
       <div class="np-text">
@@ -52,7 +52,7 @@ const player = usePlayerStore()
         class="queue-row"
         @click="player.playTrack(track.id)"
       >
-        <div class="queue-art" :style="artGradient(track.color)" />
+        <div class="queue-art" :style="artCover(track.cover)" />
         <div class="queue-meta">
           <div class="queue-title">{{ track.title }}</div>
           <div class="queue-artist">{{ track.artist }}</div>

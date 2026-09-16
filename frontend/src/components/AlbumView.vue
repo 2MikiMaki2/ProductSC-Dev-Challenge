@@ -1,7 +1,7 @@
 <script setup>
 import { ChevronLeft, Play, Pause } from 'lucide-vue-next'
 import { usePlayerStore } from '@/stores/player'
-import { formatDuration, artGradient } from '@/utils/format'
+import { formatDuration, artCover } from '@/utils/format'
 
 const player = usePlayerStore()
 </script>
@@ -13,7 +13,7 @@ const player = usePlayerStore()
     </button>
 
     <header class="album-hero">
-      <div class="hero-art" :style="artGradient(player.albumTracks[0]?.color)" />
+      <div class="hero-art" :style="artCover(player.albumTracks[0]?.cover)" />
       <div class="hero-meta">
         <span class="hero-kind">Album</span>
         <h1>{{ player.selectedAlbum }}</h1>

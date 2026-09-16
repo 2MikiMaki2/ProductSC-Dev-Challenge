@@ -1,5 +1,10 @@
-export function artGradient(color) {
-  return { background: `linear-gradient(135deg, ${color} 0%, ${color}66 100%)` }
+export function artCover(cover) {
+  return {
+    backgroundImage: `url("${cover}")`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  }
 }
 
 export function formatDuration(seconds) {

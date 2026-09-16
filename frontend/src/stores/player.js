@@ -36,7 +36,7 @@ export const usePlayerStore = defineStore('player', () => {
     const map = new Map()
     for (const track of tracks.value) {
       if (!map.has(track.album)) {
-        map.set(track.album, { name: track.album, artist: track.artist, color: track.color, tracks: [] })
+        map.set(track.album, { name: track.album, artist: track.artist, cover: track.cover, tracks: [] })
       }
       map.get(track.album).tracks.push(track)
     }
@@ -60,10 +60,6 @@ export const usePlayerStore = defineStore('player', () => {
   }
 
   function togglePlay() {
-    if (!currentTrackId.value) {
-      playTrack(tracks.value[0].id)
-      return
-    }
     isPlaying.value = !isPlaying.value
   }
 

@@ -1,6 +1,6 @@
 <script setup>
 import { usePlayerStore } from '@/stores/player'
-import { formatDuration, artGradient } from '@/utils/format'
+import { formatDuration, artCover } from '@/utils/format'
 
 const player = usePlayerStore()
 </script>
@@ -19,7 +19,7 @@ const player = usePlayerStore()
       @click="player.playTrack(track.id)"
     >
       <span class="track-index">{{ index + 1 }}</span>
-      <div class="track-art" :style="artGradient(track.color)" />
+      <div class="track-art" :style="artCover(track.cover)" />
       <div class="track-meta">
         <div class="track-title">{{ track.title }}</div>
         <div class="track-artist">{{ track.artist }}</div>

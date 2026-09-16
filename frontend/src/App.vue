@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { usePlayerStore } from '@/stores/player'
 
 import BrowseView from './components/BrowseView.vue';
@@ -10,6 +10,10 @@ import PlayBarView from './components/PlayBarView.vue';
 
 const player = usePlayerStore()
 const audio = ref(null)
+
+onMounted(() => {
+  if (player.currentTrack) audio.value.src = player.currentTrack.audio
+})
 
 watch(() => player.currentTrackId, () => {
   if (!player.currentTrack) return

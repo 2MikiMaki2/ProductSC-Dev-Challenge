@@ -1,7 +1,7 @@
 <script setup>
 import { Search, Logs, Plus, Maximize2 } from 'lucide-vue-next'
 import { usePlayerStore } from '@/stores/player'
-import { artGradient } from '@/utils/format'
+import { artCover } from '@/utils/format'
 
 const player = usePlayerStore()
 const filters = ['Playlists', 'Podcasts', 'Albums', 'Artists']
@@ -43,7 +43,7 @@ const filters = ['Playlists', 'Podcasts', 'Albums', 'Artists']
         :class="{ active: album.name === player.selectedAlbum }"
         @click="player.openAlbum(album.name)"
       >
-        <div class="row-art" :style="artGradient(album.color)" />
+        <div class="row-art" :style="artCover(album.cover)" />
         <div class="row-meta">
           <div class="row-title">{{ album.name }}</div>
           <div class="row-sub">Album • {{ album.artist }}</div>

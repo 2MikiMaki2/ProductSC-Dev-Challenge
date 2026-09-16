@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { usePlayerStore } from '@/stores/player'
-import { artGradient } from '@/utils/format'
+import { artCover } from '@/utils/format'
 
 defineProps({
   title: String,
@@ -38,7 +38,7 @@ function scrollRow(direction) {
         class="card"
         @click="player.playTrack(track.id)"
       >
-        <div class="card-art" :style="artGradient(track.color)" />
+        <div class="card-art" :style="artCover(track.cover)" />
         <div class="card-title">{{ track.title }}</div>
         <div class="card-sub">{{ track.artist }}</div>
       </button>
